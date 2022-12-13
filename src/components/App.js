@@ -175,7 +175,7 @@ function App() {
 						</Col>
 						<Col className='flex social-icons'>
 							<a
-								href="https://twitter.com/DappUniversity"
+								href="https://twitter.com/"
 								target='_blank'
 								className='circle flex button'>
 								<img src={twitter} alt="Twitter" />
@@ -206,7 +206,7 @@ function App() {
 						<Col md={5} lg={4} xl={5} xxl={4}>
 							{revealTime !== 0 && <Countdown date={currentTime + (revealTime - currentTime)} className='countdown mx-3' />}
 							<p className='text'>
-								By attending the masterclass, you'll learn how to generate NFT images, upload to IPFS, create your NFT contract, and use OpenSea!
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus tristique nibh in venenatis. Fusce a ipsum scelerisque, commodo diam a, semper tortor. Cras ac egestas dui. Integer id lectus vitae nulla sollicitudin mattis.
 							</p>
 							<a href="#about" className='button mx-3'>Learn More!</a>
 						</Col>
@@ -228,8 +228,8 @@ function App() {
 									<h3>Mint your NFT in</h3>
 									{revealTime !== 0 && <Countdown date={currentTime + (revealTime - currentTime)} className='countdown' />}
 									<ul>
-										<li>1,000 generated punked out images using an art generator</li>
-										<li>Free minting on Rinkeby testnet</li>
+										<li>26 generated punked out images using an art generator</li>
+										<li>0.01 ETH minting on Goerli testnet</li>
 										<li>Viewable on Opensea shortly after minting</li>
 									</ul>
 
