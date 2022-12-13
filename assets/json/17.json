@@ -1,0 +1,34 @@
+{
+    "id" : "17",
+    "name" : "#17",
+    "description" : "reactBLK",
+    "image" : "ipfs://QmZrqViyzNifLhqhGreBAqSM2ukb5Q46HYN5B35tRpGzMY/b17.png",
+    "edition" : 17,
+    "date" : 1670940248,
+    "attributes" : [
+        {
+            "trait_type" : "Backgrounds",
+            "value" : "Grey"
+        },
+        {
+            "trait_type" : "Face",
+            "value" : "Body 1"
+        },
+        {
+            "trait_type" : "Hats and Hair",
+            "value" : "no."
+        },
+        {
+            "trait_type" : "Eyes and Glasses",
+            "value" : "BLKK"
+        },
+        {
+            "trait_type" : "Nose",
+            "value" : "react"
+        },
+        {
+            "trait_type" : "Mouth",
+            "value" : "BIG"
+        }
+    ]
+}
