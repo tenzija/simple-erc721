@@ -4,6 +4,7 @@ import Countdown from 'react-countdown'
 import Web3 from 'web3'
 
 // Import Images + CSS
+import b1 from '../img/b1.png'
 import twitter from '../images/socials/twitter.svg'
 import instagram from '../images/socials/instagram.svg'
 import opensea from '../images/socials/opensea.svg'
@@ -14,7 +15,7 @@ import '../App.css'
 import Navbar from './Navbar'
 
 // Import ABI + Config
-import OpenPunks from '../abis/OpenPunks.json'
+import OpenPunks from '../abis/reactBLK.json'
 import config from '../config.json'
 
 function App() {
@@ -128,7 +129,7 @@ function App() {
 			setIsMinting(true)
 			setIsError(false)
 
-			await openPunks.methods.mint(1).send({ from: account, value: 0 })
+			await openPunks.methods.mint(1).send({ from: account, value: 10000000000000000 })
 				.on('confirmation', async () => {
 					const maxSupply = await openPunks.methods.maxSupply().call()
 					const totalSupply = await openPunks.methods.totalSupply().call()
@@ -148,11 +149,11 @@ function App() {
 
 	const cycleImages = async () => {
 		const getRandomNumber = () => {
-			const counter = (Math.floor(Math.random() * 1000)) + 1
+			const counter = (Math.floor(Math.random() * 6)) + 1
 			setCounter(counter)
 		}
 
-		if (!isCycling) { setInterval(getRandomNumber, 3000) }
+		if (!isCycling) { setInterval(getRandomNumber, 15) }
 		setIsCycling(true)
 	}
 
@@ -169,8 +170,8 @@ function App() {
 
 					<Row className='header my-3 p-3 mb-0 pb-0'>
 						<Col xs={12} md={12} lg={8} xxl={8}>
-							<h1>Open Punks</h1>
-							<p className='sub-header'>Availble on 05 / 26 / 22</p>
+							<h1>reactBLK</h1>
+							<p className='sub-header'>Availble on 12 / 15 / 22</p>
 						</Col>
 						<Col className='flex social-icons'>
 							<a
@@ -197,7 +198,7 @@ function App() {
 					<Row className='flex m-3'>
 						<Col md={5} lg={4} xl={5} xxl={4} className='text-center'>
 							<img
-								src={`https://gateway.pinata.cloud/ipfs/QmNN9ATnagEMrC9V5Up9c8KUrZGDiCBQVS58x3ojktg2Lt/${counter}.png`}
+								src={b1}
 								alt="Crypto Punk"
 								className='showcase'
 							/>

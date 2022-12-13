@@ -1,14 +1,16 @@
 /* Styles go here */
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Rubik:wght@300;400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 :root {
-    --clr-primary: #030303;
-    --clr-secondary: #1E1E1E;
-    --clr-text-light: #F2ECFF;
-    --clr-text-dark: #030303;
-    --clr-button-bg-1: #3586C6;
-    --clr-button-bg-2: #44E6FF;
-    --clr-button-bg-3: #FF7F50;
+    --clr-primary: #363062;
+    --clr-secondary: #827397;
+    --clr-text-light: #E9D5CA;
+    --clr-text-dark: #363062;
+    --clr-button-bg-1: #E9D5CA;
+    --clr-button-bg-2: #827397;
+    --clr-button-bg-3: #4D4C7D;
 }
 
 html {
@@ -60,7 +62,7 @@ main {
 
 /* TEXT STYLES */
 h1 {
-    font-family: "Gochi Hand";
+    font-family: "Syne Mono";
     font-weight: 700;
     font-size: clamp(3rem, 10vw, 10rem);
     transform: rotate(-4deg);
@@ -68,7 +70,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Gochi Hand";
+    font-family: "Syne Mono";
     font-weight: 700;
     font-size: clamp(2rem, 5vw, 5rem);
     padding-left: .8em;
@@ -79,7 +81,7 @@ h3 {
 }
 
 .sub-header {
-    font-family: "Gochi Hand";
+    font-family: "Syne Mono";
     font-weight: 700;
     font-size: clamp(2rem, 5vw, 4rem);
     transform: rotate(-4deg) translateX(2.5em) translateY(-0.5em);

@@ -1,4 +1,4 @@
-import logo from '../images/logo.png'
+import logo from '../img/b26.png'
 
 const Navbar = ({ web3Handler, account, explorerURL }) => {
     return (
@@ -10,7 +10,7 @@ const Navbar = ({ web3Handler, account, explorerURL }) => {
                 rel="noopener noreferrer"
             >
                 <img src={logo} className="App-logo" alt="logo" />
-                Dapp University
+                reactBLK
             </a>
 
             {account ? (
