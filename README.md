@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Open Punks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technology Stack & Tools
 
-## Available Scripts
+- Solidity (Writing Smart Contract)
+- Javascript (React & Testing)
+- [Web3](https://web3js.readthedocs.io/en/v1.5.2/) (Blockchain Interaction)
+- [Truffle](https://www.trufflesuite.com/docs/truffle/overview) (Development Framework)
+- [Ganache](https://www.trufflesuite.com/ganache) (For Local Blockchain)
+- [Infura.io](https://infura.io/) (For copying the Ethereum mainnet)
+- [MetaMask](https://metamask.io/) (Ethereum Wallet)
+- [Git](https://git-scm.com/)/[GitHub](https://github.com) (Commit our code)
+- [Fleek](https://fleek.co/) (Website Deployment)
 
-In the project directory, you can run:
+## Requirements For Initial Setup
+- Install [NodeJS](https://nodejs.org/en/), Recommended version is 14.16.0
+- Install [Truffle](https://www.trufflesuite.com/docs/truffle/overview), In your terminal, you can check to see if you have truffle by running `truffle --version`. To install truffle run `npm i -g truffle`.
+- Install [Ganache](https://www.trufflesuite.com/ganache).
+- Install [MetaMask](https://metamask.io/) in your browser.
 
-### `npm start`
+## Setting Up
+### 1. Clone/Download the Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Install Dependencies:
+`$ npm install `
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Setup .env File
+Create a .env file or rename the .env.example file, and update the values. The API & IPFS keys are technically optional for local testing, if you plan to deploy to the testnet or mainnet, you'll need to update those values.
 
-### `npm test`
+### 4. Start Ganache
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Migrate Smart Contracts
+`$ truffle migrate --reset`
 
-### `npm run build`
+### 6. Run Frontend Application
+In a separate CMD prompt/terminal run:
+`$ npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 7. (Optional) Test Smart Contracts
+`$ truffle test`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Preparing for Contract Deployment
+- Create or log in to your [Infura.io](https://infura.io/login) account and create a new project, and save your project ID located in your project settings, you'll need this if deploying to Ethereum Mainnet, or Rinkeby Testnet.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- If deploying to Polygon, you may need to setup the network in MetaMask. To do this, open MetaMask, in the top right click on your profile icon -> Settings -> Networks -> Add Network. 
+  - For **Polygon Mainnet** fill in the following:
+    1. **Network Name**: Polygon
+    2. **New RPC URL**: https://rpc-mainnet.maticvigil.com/
+    3. **Chain ID**: 137
+    4. **Currency Symbol**: MATIC
+    5. **Block Explorer URL**: https://polygonscan.com/
+  - For the **Polygon Mumbai Testnet** fill in the following:
+    1. **Network Name**: Polygon Mumbai
+    2. **New RPC URL**: https://rpc-mumbai.maticvigil.com/
+    3. **Chain ID**: 80001
+    4. **Currency Symbol**: MATIC
+    5. **Block Explorer URL**: https://mumbai.polygonscan.com/
 
-### `npm run eject`
+### Funding your MetaMask Wallet
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- If deploying to Polygon Mainnet, you will need to fund your MetaMask account with MATIC on the polygon chain, How you decide to transfer/fund is entirely upto you. Keep in mind if you have MATIC currently on the Ethereum Mainnet, you will need to bridge your MATIC over to the polygon chain. You can do this by visiting [https://wallet.polygon.technology/](https://wallet.polygon.technology/), also keep in mind you will have to have ETH in your account to cover gas fees!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- If deploying to Rinkeby testnet, you may use this ETH faucet supplied by chainlink to fund your account: [https://faucets.chain.link/rinkeby](https://faucets.chain.link/rinkeby).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- If deploying to Polygon Mumbai testnet, you may use this MATIC faucet: [https://faucet.polygon.technology/](https://faucet.polygon.technology/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Setup your .env file
+Create a .env file in the root directory of your project, and fill in the following:
+- DEPLOYER_PRIVATE_KEY="YOUR_PRIVATE_KEY"
+- INFURA_API_KEY="PROJECT_ID"
+- ETHERSCAN_API_KEY="API_TOKEN"
 
-## Learn More
+- PROJECT_NAME="YOUR_PROJECT_NAME"
+- PROJECT_SYMBOL="YOUR_PROJECT_SYMBOL"
+- MINT_COST=0
+- MAX_SUPPLY=1000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- IPFS_IMAGE_METADATA_CID="IPFS_CID"
+- IPFS_HIDDEN_IMAGE_METADATA_CID="IPFS_CID"
+- NFT_MINT_DATE="Oct 27, 2021 20:00:00"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Run your migrations
+- For Rinkeby testnet: `truffle migrate --reset --network rinkeby`
+- For Polygon Mainnet: `truffle migrate --reset --network matic`
 
-### Code Splitting
+### 3. Verify your contracts
+- For Rinkeby testnet: `truffle run verify OpenPunks --network rinkeby`
+- For Polygon Mainnet: `truffle run verify OpenPunks --network matic`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Preparing for Frontend Deployment
+### 1. Create or Login to your GitHub account
 
-### Analyzing the Bundle Size
+### 2. Create a new repository
+Input the name of your project, and a description if you wish. You may also choose to make the repository public or private
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 3. Commit your code
+If you have downloaded this code, you may need to initialize it as a git repository, to do this back in your terminal run:
+`$ git init`
 
-### Making a Progressive Web App
+Add files for staging:
+`$ git add .`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will ready your files for the commit, you may see if they have been added by running:
+`$ git status`
 
-### Advanced Configuration
+Finally commit your code
+`$ git commit -m "Deployment Setup"`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 4. Update & Push to Remote URL
+If you cloned from a repository, go ahead and update the origin link to the repository you created on GitHub by running:
+`$ git remote set-url origin <YOUR-GITHUB-REPO-LINK>`
 
-### Deployment
+Otherwise run this command instead:
+`$ git remote add origin <YOUR-GITHUB-REPO-LINK>`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Finally, push the code to the repoository:
+`$ git push origin master`
 
-### `npm run build` fails to minify
+### 5. Create or sign in to your Fleek account
+Easiest option is to sign in with your GitHub account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Click on Add new site & Connect with GitHub
+
+Configure and select your repo to deploy
+
+For deploy location, select IPFS hosting
+
+On the build options and deploy tab, under the section Basic Build Settings, for framework select Create React App, then click on Deploy site.

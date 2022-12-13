@@ -1,1 +1,2 @@
-ipfs://QmZrqViyzNifLhqhGreBAqSM2ukb5Q46HYN5B35tRpGzMY
+ipfs://QmZrqViyzNifLhqhGreBAqSM2ukb5Q46HYN5B35tRpGzMY - img
+ipfs://QmWk5RjZFyePnFg32d6KXZLfmb5KcFjSg86TzkKasWq7x9 - metadata
